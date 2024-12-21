@@ -1,62 +1,143 @@
 <!DOCTYPE html>
-<html lang="en">
+<html lang="fr">
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Contact Info</title>
+    <title>Contact Section</title>
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/5.15.4/css/all.min.css">
     <style>
         body {
             font-family: Arial, sans-serif;
-            margin: 20px;
-        }
-        .row.contact-info {
-            max-width: 600px;
-            margin: 0 auto;
-            border: 1px solid #ccc;
-            padding: 20px;
-            border-radius: 8px;
-            background-color: #f9f9f9;
-        }
-        .info-list {
-            list-style: none;
+            margin: 0;
             padding: 0;
+            box-sizing: border-box;
         }
-        .info-list li {
+
+        #contact {
+            padding: 20px;
+            background: #f9f9f9;
+        }
+
+        .section-intro {
+            text-align: center;
+            margin-bottom: 30px;
+        }
+
+        h5 {
+            font-size: 1.2em;
+            color: #555;
+        }
+
+        h1 {
+            font-size: 2.5em;
+            color: #222;
+        }
+
+        .contact-form {
+            max-width: 600px;
+            margin: 0 auto 30px;
+        }
+
+        form input, form textarea {
+            width: 100%;
+            padding: 10px;
+            margin-bottom: 10px;
+            border: 1px solid #ccc;
+            border-radius: 4px;
+        }
+
+        form input[type="submit"] {
+            background: #007BFF;
+            color: #fff;
+            border: none;
+            cursor: pointer;
+            padding: 10px 20px;
+            transition: background 0.3s ease;
+        }
+
+        form input[type="submit"]:hover {
+            background: #0056b3;
+        }
+
+        .contact-info {
+            display: flex;
+            justify-content: space-around;
+            text-align: center;
+        }
+
+        .contact-info .col-four {
+            flex: 1;
+            padding: 10px;
+        }
+
+        .contact-info .icon {
+            font-size: 2em;
+            color: #007BFF;
             margin-bottom: 10px;
         }
-        .info-list strong {
-            display: inline-block;
-            width: 120px;
+
+        @media (max-width: 768px) {
+            .contact-info {
+                flex-direction: column;
+            }
         }
     </style>
 </head>
 <body>
 
-    <div class="row contact-info">
-        <h3>Contact Information</h3>
-        <ul class="info-list">
-            <li>
-                <strong>Nom et Prénom:</strong>
-                <span>ABOU ALNASER Mohamad</span>
-            </li>
-            <li>
-                <strong>Date de naissance:</strong>
-                <span>Né le : 15 / 09 / 1982</span>
-            </li>
-            <li>
-                <strong>Email:</strong>
-                <span>m.aboualnasser@gmail.com</span>
-            </li>
-            <li>
-                <strong>Adress:</strong>
-                <span>2 rue Barbes, 92 210 Montrouge</span>
-            </li>
-            <li>
-                <strong>Phone:</strong>
-                <span>+ 33 6 27 76 01 44</span>
-            </li>
-        </ul>
-    </div>
+    <section id="contact">
+        <div class="row section-intro">
+            <div class="col-twelve">
+                <h5>Contact</h5>
+                <h1>N'hésitez pas à me contacter.</h1>
+            </div>
+        </div>
+
+        <div class="row contact-form">
+            <div class="col-twelve">
+                <form id="contactform" action="https://formspree.io/f/your_form_id" method="POST">
+                    <input type="text" name="name" placeholder="Votre Nom" required>
+                    <input type="email" name="_replyto" placeholder="Votre Mail" required>
+                    <textarea name="message" placeholder="Votre Message" required></textarea>
+                    <input type="submit" value="Envoyez">
+                </form>
+                <div id="message-warning"></div>
+                <div id="message-success">
+                    <i class="fas fa-check"></i> Votre message a été envoyé, merci !<br>
+                </div>
+            </div>
+        </div>
+
+        <div class="row contact-info">
+            <div class="col-four tab-full">
+                <div class="icon">
+                    <i class="fas fa-map-marker-alt"></i>
+                </div>
+                <h5>Pour me contacter</h5>
+                <p>
+                    2 rue barbes<br>
+                    92120<br>
+                    Montrouge
+                </p>
+            </div>
+            <div class="col-four tab-full collapse">
+                <div class="icon">
+                    <i class="fas fa-envelope"></i>
+                </div>
+                <h5>Envoyez-moi un e-mail</h5>
+                <p>m.aboualnasser@gmail.com</p>
+            </div>
+            <div class="col-four tab-full">
+                <div class="icon">
+                    <i class="fas fa-phone"></i>
+                </div>
+                <h5>Appelez-moi</h5>
+                <p>
+                    Téléphone : +33 6 27 76 01 44<br>
+                </p>
+            </div>
+        </div>
+    </section>
 
 </body>
 </html>
