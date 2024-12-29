@@ -87,8 +87,8 @@ body{font-family:'Lato', sans-serif;font-size:16px}
 }
 
 #lead-headshot img {
-    width: 20vw; /* Width as a percentage of viewport width */
-    max-width: 250px; /* Prevent it from getting too large */
+    width: 12vw; /* Width as a percentage of viewport width */
+    max-width: 180px; /* Prevent it from getting too large */
     min-width: 75px; /* Prevent it from getting too small */
     height: auto; /* Maintain aspect ratio */
     border-radius: 50%; /* Circular appearance */
